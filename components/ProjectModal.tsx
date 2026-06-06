@@ -44,6 +44,16 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
   /* Focus panel on open */
   useEffect(() => { panelRef.current?.focus(); }, []);
 
+  /* Preload all track images so switching is instant */
+  useEffect(() => {
+    project.tracks.forEach((track) => {
+      if (track.image) {
+        const img = new Image();
+        img.src = track.image;
+      }
+    });
+  }, [project.tracks]);
+
   const tracks = project.tracks;
   const activeTrack = tracks[activeIndex];
   const isMobileApp = project.platform === "mobile";
