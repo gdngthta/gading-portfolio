@@ -99,6 +99,7 @@ export const projects: Project[] = [
       "Parser quality testing for academic screenshots",
       "Final production-readiness audit and documentation polish",
     ],
+    liveDemoUrl: "https://courseflow-six.vercel.app/",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Kanban", "Calendar", "Telegram Bot"],
     tracks: [
       {

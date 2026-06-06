@@ -4,7 +4,9 @@ A premium vinyl record / album archive themed software engineering portfolio for
 
 ## Live Demo
 
-> Deploy URL — replace after Vercel deployment
+**https://gadingtahtawidi.xyz** (custom domain — may take up to 1 hour to propagate)
+
+Vercel fallback: https://gading-portfolio.vercel.app
 
 ## Tech Stack
 
@@ -197,7 +199,7 @@ npx vercel
 
 | # | Project | Status | Screenshots |
 |---|---|---|---|
-| GTW-001 | CourseFlow | Active Development | All 8 screenshots present ✓ |
+| GTW-001 | CourseFlow | Active Development | All 8 screenshots present ✓ · [Live Demo](https://courseflow-six.vercel.app/) |
 | GTW-002 | Satori Rattan Web | In Development | All 6 screenshots present ✓ |
 | GTW-003 | BudgetBite | Prototype / Refactoring | All 5 screenshots present ✓ |
 
