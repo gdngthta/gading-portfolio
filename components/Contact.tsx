@@ -18,8 +18,8 @@ const links = [
   },
   {
     label: "LinkedIn",
-    value: "linkedin.com/in/gadingtahta",
-    href: "https://linkedin.com/in/gadingtahta",
+    value: "linkedin.com/in/gadingtahtawidi",
+    href: "https://linkedin.com/in/gadingtahtawidi",
     icon: ExternalLink,
   },
 ];

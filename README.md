@@ -207,4 +207,4 @@ npx vercel
 
 - **Email** — [gadingtahta09@gmail.com](mailto:gadingtahta09@gmail.com)
 - **GitHub** — [github.com/gdngthta](https://github.com/gdngthta)
-- **LinkedIn** — [linkedin.com/in/gadingtahta](https://linkedin.com/in/gadingtahta)
+- **LinkedIn** — [linkedin.com/in/gadingtahtawidi](https://linkedin.com/in/gadingtahtawidi)
