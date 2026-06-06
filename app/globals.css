@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+/* ── Design Tokens ─────────────────────────────────────────────── */
+:root {
+  --bg-base:       #0d0c0b;
+  --bg-surface:    #141210;
+  --bg-raised:     #1c1917;
+
+  --border:        #2A2925;
+  --border-light:  #34312B;
+
+  --text-primary:  #F4F1E8;
+  --text-secondary:#C9C1B3;
+  --text-muted:    #9A9185;
+
+  --gold:          #D4AF37;
+  --gold-dim:      #9A7B2A;
+  --gold-bright:   #E8C84A;
+
+  --font-serif:    var(--font-cormorant);
+  --font-sans:     var(--font-inter);
+  /* --font-mono is injected by Next.js Space Mono font class */
+}
+
+@theme inline {
+  --color-background: var(--bg-base);
+  --color-foreground: var(--text-primary);
+  --font-sans:        var(--font-inter);
+  --font-mono:        var(--font-mono);
+}
+
+/* ── Base Reset ─────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+/* ── Grain Texture ──────────────────────────────────────────────── */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 128px 128px;
+  background-repeat: repeat;
+}
+
+/* ── Typography Utilities ───────────────────────────────────────── */
+.font-serif       { font-family: var(--font-serif), Georgia, serif; }
+.font-sans        { font-family: var(--font-sans),  system-ui, sans-serif; }
+.font-mono        { font-family: var(--font-mono),  monospace; }
+
+.label-caps {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.label-gold {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ── Scrollbar ──────────────────────────────────────────────────── */
+::-webkit-scrollbar               { width: 4px; }
+::-webkit-scrollbar-track         { background: var(--bg-base); }
+::-webkit-scrollbar-thumb         { background: var(--border-light); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover   { background: var(--gold-dim); }
+
+/* ── Selection ──────────────────────────────────────────────────── */
+::selection {
+  background-color: var(--gold-dim);
+  color: var(--bg-base);
+}
+
+/* ── Vinyl Spin ─────────────────────────────────────────────────── */
+@keyframes vinyl-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.vinyl-spin {
+  animation: vinyl-spin 8s linear infinite;
+}
+
+.vinyl-spin-slow {
+  animation: vinyl-spin 20s linear infinite;
+}
+
+/* ── Thin gold rule ─────────────────────────────────────────────── */
+.rule-gold {
+  border: none;
+  border-top: 1px solid var(--gold-dim);
+  opacity: 0.4;
+}
+
+/* ── Equalizer bars ─────────────────────────────────────────────── */
+@keyframes eq-bar {
+  0%, 100% { height: 3px;  }
+  50%       { height: 11px; }
+}
+
+.eq-bar {
+  width: 2px;
+  height: 3px;
+  border-radius: 1px;
+  background-color: var(--gold);
+  animation: eq-bar 0.75s ease-in-out infinite;
+}
+
+/* ── Focus Visible ──────────────────────────────────────────────── */
+:focus-visible {
+  outline: 1.5px solid var(--gold-dim);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ── Reduced Motion ─────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  /* Stop infinite CSS rotations */
+  .vinyl-spin,
+  .vinyl-spin-slow {
+    animation: none;
+  }
+
+  /* Freeze equalizer bars at a neutral mid-height */
+  .eq-bar {
+    animation: none;
+    height: 6px;
+  }
+}

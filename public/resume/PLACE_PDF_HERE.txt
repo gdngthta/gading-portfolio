@@ -1,0 +1,8 @@
+Place your resume PDF here:
+
+  public/resume/Gading-Tahta-Widi-Resume.pdf
+
+The "Download CV" buttons in Hero and Contact both link to:
+  /resume/Gading-Tahta-Widi-Resume.pdf
+
+This file can be deleted once the real PDF is in place.
